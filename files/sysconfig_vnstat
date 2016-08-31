@@ -1,0 +1,1 @@
+VNSTAT_OPTIONS="-u -i ${node.metadata['main_interface']}"
