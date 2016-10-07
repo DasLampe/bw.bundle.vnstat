@@ -12,7 +12,7 @@ This bundle has been tested on the following systems:
 | OS          | `[x]` |
 | ----------- | ----- |
 | Fedora 24   | `[x]` |
-| Fedberry 23 | `[ ]` |
+| Fedberry 24 | `[x]` |
 
 
 ## Metadata
