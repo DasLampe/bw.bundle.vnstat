@@ -40,6 +40,14 @@ files = {
     },
 }
 
+directories = {
+    "/var/lib/vnstat": {
+        "mode": "6755",
+        "owner": "vnstat",
+        "group": "vnstat",
+    },
+}
+
 for interface in node.metadata['interfaces']:
     actions['vnstat_create_database_{}'.format(interface)] = {
         'command': "vnstat -u -i {}".format(interface),
