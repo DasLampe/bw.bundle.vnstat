@@ -1,4 +1,4 @@
-pkg_yum = {
+pkg_dnf = {
     'vnstat': {},
 }
 
@@ -6,7 +6,7 @@ svc_systemd = {
     'vnstat': {
         'enabled': True,
         'needs': [
-            "pkg_yum:vnstat",
+            "pkg_dnf:vnstat",
         ],
     },
 }
@@ -20,7 +20,7 @@ files = {
         'mode': "0644",
         'content_type': "mako",
         'needs': [
-            "pkg_yum:vnstat",
+            "pkg_dnf:vnstat",
         ],
         'triggers': [
             "svc_systemd:vnstat:restart",
@@ -32,7 +32,7 @@ files = {
         'mode': "0644",
         'content_type': "mako",
         'needs': [
-            "pkg_yum:vnstat",
+            "pkg_dnf:vnstat",
         ],
         'triggers': [
             "svc_systemd:vnstat:restart",
@@ -54,7 +54,7 @@ for interface in node.metadata['interfaces']:
         'unless': "test -f /var/lib/vnstat/{}".format(interface),
         'cascade_skip': False,
         'needs': [
-            "pkg_yum:vnstat",
+            "pkg_dnf:vnstat",
         ],
         'triggers': [
             "svc_systemd:vnstat:restart",
