@@ -45,6 +45,9 @@ directories = {
         "mode": "6755",
         "owner": "vnstat",
         "group": "vnstat",
+        'needs': [
+            "pkg_dnf:vnstat",
+        ],
     },
 }
 
