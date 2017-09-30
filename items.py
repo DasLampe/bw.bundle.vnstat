@@ -4,7 +4,6 @@ pkg_dnf = {
 
 svc_systemd = {
     'vnstat': {
-        'enabled': True,
         'needs': [
             "pkg_dnf:vnstat",
         ],
@@ -16,7 +15,6 @@ actions = {}
 files = {
     '/etc/sysconfig/vnstat': {
         'source': "sysconfig_vnstat",
-        'owner': "root",
         'mode': "0644",
         'content_type': "mako",
         'needs': [
@@ -28,7 +26,6 @@ files = {
     },
     '/etc/vnstat.conf': {
         'source': "vnstat.conf",
-        'owner': "root",
         'mode': "0644",
         'content_type': "mako",
         'needs': [
@@ -44,7 +41,6 @@ directories = {
     "/var/lib/vnstat": {
         "mode": "6755",
         "owner": "vnstat",
-        "group": "root",
         'needs': [
             "pkg_dnf:vnstat",
         ],
