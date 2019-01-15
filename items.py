@@ -9,6 +9,10 @@ svc_systemd = {
     },
 }
 
+users = {
+    'vnstat': {},
+}
+
 actions = {}
 
 files = {
