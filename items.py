@@ -40,7 +40,7 @@ directories = {
     },
 }
 
-for interface in node.metadata['interfaces']:
+for interface in node.metadata.get('interfaces', {}):
     actions['vnstat_create_database_{}'.format(interface)] = {
         'command': 'vnstat -u -i {}'.format(interface),
         'unless': 'test -f /var/lib/vnstat/{}'.format(interface),
