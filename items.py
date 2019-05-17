@@ -28,6 +28,7 @@ directories = {
     '/var/lib/vnstat': {
         'mode': '6755',
         'owner': 'vnstat',
+        'group': 'vnstat',
         'needs': ['pkg_apt:vnstat'],
     },
 }
